@@ -36,6 +36,7 @@
     <header>{{ block "header" . }}{{ end }}</header>
     <main>{{ block "main" . }}{{ end }}</main>
     <footer>{{ block "footer" . }}{{ end }}</footer>
+    {{ partial "scripts" . }}
     {{ template "_internal/google_analytics_async.html" . }}
   </body>
 </html>
