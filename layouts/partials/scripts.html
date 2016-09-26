@@ -24,3 +24,37 @@ var trackReferralLink = function(url) {
    })
 }
 </script>
+
+{{ if .Params.google_click_conversion }}
+  <script type="text/javascript">
+    {{ `/* <![CDATA[ */` | safeJS }}
+    goog_snippet_vars = function() {
+      var w = window;
+      w.google_conversion_id = {{ .Params.google_click_conversion.id }};
+      w.google_conversion_label = {{ .Params.google_click_conversion.label }};
+      {{- with .Params.google_click_conversion.value }}
+      w.google_conversion_value = {{ . }};
+      {{ end -}}
+      w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+      goog_snippet_vars();
+      window.google_conversion_format = "3";
+      var opt = new Object();
+      opt.onload_callback = function() {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+      conv_handler(opt);
+    }
+  }
+  {{ `/* ]]> */` | safeJS }}
+  </script>
+  <script type="text/javascript"
+    src="//www.googleadservices.com/pagead/conversion_async.js">
+  </script>
+{{ end }}
