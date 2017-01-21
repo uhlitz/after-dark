@@ -60,3 +60,28 @@ var trackReferralLink = function(url) {
 {{ else }}
   <script>goog_report_conversion = function(){} // DO NOTHING </script>
 {{ end }}
+
+<!--
+  Script that allows trigging functions when scrolling to an element.
+  @see http://imakewebthings.com/waypoints/
+-->
+<script src="{{ .Site.BaseURL }}js/vendor/waypoints/noframework.waypoints.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/vendor/waypoints/shortcuts/inview.min.js"></script>
+<script>
+  /**
+   * Script that uses uses the Waypoints Inview shortcut to set the image src
+   * attribute from a data-src when the element enters the viewport. This is
+   * used for lazy-loading, for a faster mobile experience.
+   */
+  const images = document.querySelectorAll('img[data-src]')
+  const waypoints = []
+  images.forEach((image) => {
+    waypoints[image.dataset.src] = new Waypoint.Inview({
+      element: image,
+      enter: () => {
+        image.src = image.dataset.src
+        waypoints[image.dataset.src].destroy()
+      }
+    })
+  })
+</script>
