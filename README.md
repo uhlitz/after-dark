@@ -15,7 +15,7 @@ Head to [Hack Cabin](http://hackcabin.com) for a production example running on A
 
 - Dark theme intended for low-light reading
 - Entire page served in a single HTTP request (including favicon)
-- Grid layouts and more using [hack.css](hackcss.com)
+- Grid layouts and more using [hack.css](http://hackcss.com)
 - Responsive typography optimized for mobile, tablet and desktop
 - [Block Templates](https://gohugo.io/templates/blocks/) for foolproof layouts
 - Google Analytics tracking using the [internal async template](https://gohugo.io/extras/analytics#configuring-google-analytics)

@@ -1,0 +1,11 @@
+{{ $type := .Get 0 }}
+{{ if $type }}
+  <hr>
+  <!-- {{/*
+  https://michaelhyatt.com/five-ways-to-comply-with-the-new-ftc-guidelines-for-bloggers.html
+  Usage: {{% disclaimer "affiliate" %}}
+  */}} -->
+  {{ if eq $type "affiliate" }}
+    <small>Please note that some of the above links are affiliate links which means I will receive a small commission if you buy through them (you won’t pay any extra). These are all products that I love and have used myself. If you choose to buy through these links, thank you for your support.</small>
+  {{ end }}
+{{ end }}
