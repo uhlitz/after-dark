@@ -35,10 +35,15 @@
     {{ partial "critical-theme.css" }}
     {{ partial "critical-custom.css" }}
     {{ template "_internal/google_analytics_async.html" . }}
+    {{ partial "head_highlightjs" . }}
   </head>
-  <body class="hack dark main container">
+  <body class="hack main container">
     <header>{{ block "header" . }}{{ end }}</header>
     <main>{{ block "main" . }}{{ end }}</main>
-    <footer>{{ block "footer" . }}{{ end }}</footer>
+    <footer>
+      {{ block "footer" . }}{{ end }}
+      {{ partial "footer_highlightjs" . }}
+      {{ partial "footer_mathjax" . }}
+    </footer>
   </body>
 </html>
