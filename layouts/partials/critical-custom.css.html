@@ -14,26 +14,49 @@
   html {
     font-size: 15px;
   }
-  pre {
-    background-color: #f8f8f8;
-  }
   article [itemprop="description"] {
     margin-bottom: 20px;
     margin-top: 20px;
   }
 
   /* hack.css overrides by me */
+  .hack pre {
+    background-color: #000;
+  }
+  .hack code {
+    font-weight: 100;
+  }
   h2[itemprop="headline"] a {
     color: #000;
-    border-bottom: 1px solid black;
+    border-bottom: 0px;
   }
   h2[itemprop="headline"] a:hover {
     color: #fff;
-    border-bottom: 1px solid #00f;
+    border-bottom: 0px;
+  }
+  h2[itemprop="headline"] {
+    position: relative;
+    display: inline-block;
+    display: table-cell;
+    padding: 20px 0 20px;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  h2[itemprop="headline"]:after {
+    content: "---------------------------------------------------------------";
+    position: absolute;
+    bottom: 0px;
+    left: 0
   }
   a {
     color: #00f;
     border-bottom: 1px solid #00f;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
   }
   a:hover {
     background-color: #00f;
@@ -57,6 +80,10 @@
     color: rgba(0,0,0,0.8);
     font-weight: 500;
   }
+  
+  /* code toggle btn */
+  .hide-code {
 
+  }
 
 </style>

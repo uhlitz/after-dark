@@ -33,9 +33,9 @@
     {{ partial "favicon" . }}
     {{ partial "critical-vendor.css" }}
     {{ partial "critical-theme.css" }}
+    {{ partial "head_highlightjs" . }}
     {{ partial "critical-custom.css" }}
     {{ template "_internal/google_analytics_async.html" . }}
-    {{ partial "head_highlightjs" . }}
   </head>
   <body class="hack main container">
     <header>{{ block "header" . }}{{ end }}</header>
